@@ -1,0 +1,258 @@
+* {
+  outline: none;
+}
+
+.AddExpenseModal {
+  background-color: #efefefd9;
+  width: 42.8vw; 
+  height: 42.9vh; 
+  border-radius: 1.19vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.AddExpenseModalOverlay {
+  background-color: #ffffffc4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.AddExpenseModal h1 {
+  font-family: "Ubuntu";
+  font-weight: 700;
+  color: black;
+}
+
+.AddExpenseModal .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.19vw; 
+  row-gap: 1.59vw;
+}
+
+.AddExpenseModal input,
+.AddExpenseModal select {
+  width: 17.73vw;
+  height: 6.53vh;
+  border-radius: 1.19vw;
+  border-style: none;
+  background: linear-gradient(0deg, #fbfbfb, #fbfbfb);
+  box-shadow: 0px 4px 4px 0px #00000040;
+  outline: none;
+}
+
+input {
+  padding: 1.59vw;
+}
+
+input::placeholder {
+  font-family: "Open Sans";
+  font-size: 1.27vw;
+  font-weight: 400;
+  color: #919191;
+}
+
+select {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #919191;
+  font-size: 1.27vw;
+  padding-right: 1.59vw;
+  padding-left: 1.59vw;
+  appearance: none;
+}
+
+.AddExpense-button {
+  width: 17.73vw; 
+  height: 6.53vh; 
+  border-radius: 1.19vw; 
+  box-shadow: 0px 0.32vw 0.32vw 0px #00000040; 
+  font-size: 1.27vw;
+  background: linear-gradient(0deg, #f4bb4a, #f4bb4a);
+  border-style: none;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cancel-button {
+  width: 8.91vw; 
+  height: 6.53vh;
+  border-radius: 1.19vw; 
+  box-shadow: 0px 0.32vw 0.32vw 0px #00000040;
+  border-style: none;
+  background: linear-gradient(0deg, #e3e3e3, #e3e3e3);
+}
+
+@media (max-width: 480px) {
+  .AddExpenseModal {
+    width: 60%;
+    height: fit-content;
+    padding: 5%;
+  }
+
+  .AddExpenseModal .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+  }
+
+  .AddExpenseModal input,
+  .AddExpenseModal select {
+    width: 100%;
+    height: 10vw;
+    border-radius: 2vw;
+    padding-left: 20px;
+  }
+
+  .AddExpenseModal input::placeholder {
+    font-size: 85%;
+  }
+
+  select {
+    font-size: 80%;
+  }
+
+  .AddExpense-button,
+  .AddExpenseModal .cancel-button {
+    width: 100%;
+    height: 10vw;
+    font-size: 85%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .AddExpenseModal {
+    width: 60%;
+    height: fit-content;
+    padding: 5%;
+  }
+
+  .AddExpenseModal .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+  }
+
+  .AddExpenseModal input,
+  .AddExpenseModal select {
+    width: 100%;
+    height: 8vw;
+    border-radius: 2vw;
+    padding-left: 20px;
+  }
+
+  .AddExpenseModal input::placeholder {
+    font-size: 85%;
+  }
+
+  select {
+    font-size: 80%;
+  }
+
+  .AddExpense-button,
+  .AddExpenseModal .cancel-button {
+    width: 100%;
+    height: 8vw;
+    font-size: 85%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .AddExpenseModal {
+    width: 70%;
+    height: fit-content;
+    padding: 5%;
+  }
+
+  .AddExpenseModal input,
+  .AddExpenseModal select {
+    width: 100%;
+    height: 7vw;
+    border-radius: 2vw;
+    padding-left: 20px;
+  }
+
+  .AddExpenseModal input::placeholder {
+    font-size: 90%;
+  }
+
+  select {
+    font-size: 85%;
+  }
+
+  .AddExpense-button,
+  .AddExpenseModal .cancel-button {
+    width: 100%;
+    height: 7vw;
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .AddExpenseModal {
+    width: 50%;
+    height: fit-content;
+    padding: 4%;
+  }
+
+  .AddExpenseModal h1{
+    margin-bottom: 2%;
+  }
+  
+  .AddExpenseModal input,
+  .AddExpenseModal select {
+    width: 100%;
+    height: 5vw;
+    border-radius: 1.2vw;
+    padding-left: 20px;
+  }
+
+  .AddExpenseModal input::placeholder {
+    font-size: 100%;
+  }
+
+  select {
+    font-size: 90%;
+  }
+
+  .AddExpense-button,
+  .AddExpenseModal .cancel-button {
+    width: 100%;
+    height: 5vw;
+    font-size: 100%;
+  }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .AddExpenseModal {
+    height: fit-content;
+    padding: 4%;
+  }
+
+  .AddExpenseModal input,
+  .AddExpenseModal select {
+    height: 3.5vw;
+  }
+
+  .AddExpenseModal .grid {
+    row-gap: 20px; 
+    gap: 1.5vw; 
+    row-gap: 1.5vw;
+  }
+
+  .AddExpense-button,
+  .AddExpenseModal .cancel-button {
+    height: 3.5vw;
+  }
+}
