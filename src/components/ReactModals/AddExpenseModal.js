@@ -85,11 +85,8 @@ export default function AddExpenseModal({ isOpen, handleCloseModal, totalExpense
             <select name="category" id="category" onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
               <option value="Select Category" default>Select Category </option>
               <option value="Food" >Food </option>
+              <option value="Entertainment">Entertainment </option> 
               <option value="Travel">Travel </option>
-              <option value="Healthcare">Healthcare </option>
-              <option value="Entertainment">Entertainment </option>
-              <option value="Shopping">Shopping  </option>
-              <option value="Education">Education </option>
               <option value="Education">Others </option>
             </select>
           </div>

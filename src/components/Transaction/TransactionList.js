@@ -4,19 +4,12 @@ import { ExpenseRatioContext } from "../../context/ExpenseRatioContext";
 import { TiDeleteOutline } from "react-icons/ti";
 import { GoPencil } from "react-icons/go";
 import EditExpenseModal from "../ReactModals/EditExpenseModal";
-import { FaUtensils, FaTools, FaPlane, FaHeartbeat, FaFilm, FaShoppingBag, FaGraduationCap, FaPiggyBank, FaCreditCard, FaSpa } from 'react-icons/fa';
+import { FaUtensils, FaPlane, FaFilm } from 'react-icons/fa';
 
 const categoryData = {
     'Food': { img: <FaUtensils /> },
-    'Utilities': { img: <FaTools /> },
     'Travel': { img: <FaPlane /> },
-    'Healthcare': { img: <FaHeartbeat /> },
-    'Entertainment': { img: <FaFilm /> },
-    'Shopping': { img: <FaShoppingBag /> },
-    'Education': { img: <FaGraduationCap /> },
-    'Savings': { img: <FaPiggyBank /> },
-    'Debt': { img: <FaCreditCard /> },
-    'Personal Care': { img: <FaSpa /> }
+    'Entertainment': { img: <FaFilm /> }
 };
 
 export default function TransactionList({ item }) {

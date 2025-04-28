@@ -8,7 +8,6 @@ ReactModal.setAppElement('#root');
 
 export default function EditExpenseModal({ isOpen, handleCloseModal, id }) {
   const [formData, setFormData] = useState({})
-  //formData = {title, price, category, date}
   const { expenses, setExpenses } = useContext(ExpenseContext);
   const { expenseRatio, setExpenseRatio } = useContext(ExpenseRatioContext);
   const [index, setIndex] = useState(null)
@@ -35,8 +34,6 @@ export default function EditExpenseModal({ isOpen, handleCloseModal, id }) {
 
 
   const handleEditExpense = () => {
-
-    // replace the category (remove old, update new)
     let expenseRatioCopy = { ...expenseRatio }
     let expense = expenses.filter(item => item.id === id)[0]
     let oldCategory = expense.category
@@ -44,7 +41,7 @@ export default function EditExpenseModal({ isOpen, handleCloseModal, id }) {
     let newCategory = formData.category
     let newPrice = formData.price
 
-    //delete or reduce oldPrice from expenseRatio price in oldCategory
+
     let price = expenseRatioCopy[oldCategory].price - oldPrice
     if (price === 0) {
       delete expenseRatioCopy[oldCategory]
@@ -52,11 +49,10 @@ export default function EditExpenseModal({ isOpen, handleCloseModal, id }) {
       expenseRatioCopy = { ...expenseRatioCopy, [oldCategory]: { price } }
     }
 
-    //add or increase new price in new category
+
     price = expenseRatioCopy[newCategory] ? expenseRatioCopy[newCategory].price + Number(newPrice) : Number(newPrice)
     expenseRatioCopy = { ...expenseRatioCopy, [newCategory]: { price } }
 
-    // calculate ratios for new categories
     let totalPrice = 0
     Object.keys(expenseRatioCopy).forEach((item) => {
       totalPrice = totalPrice + expenseRatioCopy[item].price
@@ -71,11 +67,10 @@ export default function EditExpenseModal({ isOpen, handleCloseModal, id }) {
     setExpenseRatio(expenseRatioCopy)
 
 
-    //replace from existing expenses
     let expensesCopy = [...expenses]
     let index = expensesCopy.findIndex(item => item.id === id)
     expensesCopy.splice(index, 1, { ...formData, id })
-    // set it
+
     localStorage.setItem('expenses', JSON.stringify(expensesCopy))
     setExpenses(expensesCopy)
 
@@ -103,15 +98,9 @@ export default function EditExpenseModal({ isOpen, handleCloseModal, id }) {
             <select name="category" id="category" value={formData.category || "Select Category"} onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
               <option value="Select Category">Select Category </option>
               <option value="Food" >Food </option>
-              <option value="Utilities">Utilities </option>
               <option value="Travel">Travel </option>
-              <option value="Healthcare">Healthcare </option>
               <option value="Entertainment">Entertainment </option>
-              <option value="Shopping">Shopping  </option>
-              <option value="Education">Education </option>
-              <option value="Savings">Savings  </option>
-              <option value="Debt">Debt  </option>
-              <option value="Personal Care">Personal Care </option>
+              <option value="Shopping">Others  </option>
             </select>
           </div>
 

@@ -13,7 +13,6 @@ export default function Pagination({ pageIndex, setPageIndex }) {
                     <IoIosArrowRoundBack style={{ width: '24px', height: '24px' }} />
                 </button>
                 <div className='Pagination-inner'>
-                    {/* Array.from(lengthObject, mapFunction) */}
                     {Array.from({ length: numberOfPages }, (_, i) => (
                         <button key={i} id={i} className='Pagination-page-button' onClick={() => setPageIndex(i)}>{i + 1}</button>
                     ))}
